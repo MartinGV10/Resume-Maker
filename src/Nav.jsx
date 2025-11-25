@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Nav.css'
 
 function Nav() {
@@ -5,7 +6,9 @@ function Nav() {
         <>
             <div className="header">
                 <div className="nav-left">
-                    <h2 className='title'>Re:sumé.io</h2>
+                    <Link to='/'>
+                        <h2 className='title'>Re:sumé.io</h2>
+                    </Link>
                 </div>
                 <div className="nav-right">
                     <h2>Create Resume</h2>
