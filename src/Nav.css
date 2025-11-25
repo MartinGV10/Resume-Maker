@@ -1,0 +1,40 @@
+.header {
+    background-color: #0353A4;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h2 {
+    font-weight: 500;
+}
+
+.nav-right {
+    border: none;
+    background-color: #002855;
+    border-radius: 10px;
+
+}
+
+.nav-right h2 {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.nav-right h2:hover {
+    color: #E2C044;
+    background-color: #001845;
+}
+
+.title {
+    cursor: pointer;
+    transition: 0.2s all;
+}
+
+.title:hover {
+    color: #E2C044;
+}
