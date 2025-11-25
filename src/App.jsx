@@ -8,6 +8,7 @@ import nvidia from './assets/nvidia.svg'
 import microsoft from './assets/microsoft-6.svg'
 import apple from './assets/apple-11.svg'
 import tesla from './assets/tesla-9.svg'
+import { Link } from 'react-router'
 import './App.css'
 
 function App() {
@@ -17,7 +18,9 @@ function App() {
         <div className="start">
             <h1>Re:sumé.io</h1>
             <p className="desc">Why waste time manually creating your resume, when this app completely does it for you!</p>
-            <button className="get-started">Click here to get started!</button>
+            <Link to='/FormSetup'>
+                <button className="get-started">Click here to get started!</button>
+            </Link>
         </div>
 
         <div className="body">
@@ -61,14 +64,6 @@ function App() {
                         <img src={meta} alt="" className="home-pics" />
 
                     </div>
-                    {/* <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" />
-                    <img src={} alt="" className="home-pics" /> */}
-
                 </div>
             </div>
         </div>

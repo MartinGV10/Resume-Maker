@@ -74,7 +74,6 @@ button {
   padding: 20px;
   background-color: #587B7F;
   border-radius: 10px;
-  /* border: 3px solid #E2C044; */
 }
 
 .sec2 {
@@ -82,7 +81,6 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-bottom: 100px; */
   background-color: #D3D0CB;
   color: black;
   width: 100%;
@@ -94,26 +92,18 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 .home-pics {
   width: 200px;
   height: 100px;
   padding: 10px;
-  border-right: 1px solid black;
-
 }
 
 .pics-bottom, .pics-top {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.pics-bottom {
-  border-top: 1px solid black;
-}
-
-.home-pics:nth-child(4) {
-  border-right: none;
+  gap: 20px
 }
