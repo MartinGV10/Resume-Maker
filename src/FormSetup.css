@@ -45,6 +45,7 @@
     margin-left: 30px;
     padding: 10px;
     margin-bottom: 20px;
+    box-shadow: 0 0 5px black;
 }
 
 .form-item {
@@ -80,7 +81,17 @@
 
 .content {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    width: 100%;
+}
+
+.setup-left {
+    flex: 0 0 600px;
+    /* max-width: 40%; */
+}
+
+.setup-right {
+    flex: 0 0 850px;
+    /* margin-right: 100px; */
 }

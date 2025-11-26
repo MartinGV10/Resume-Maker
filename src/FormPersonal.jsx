@@ -1,31 +1,31 @@
-function FormPersonal() {
+function FormPersonal({ personalInfo, onChange }) {
     return (
         <>
             <div className="form-cont">
                 <h1>Personal Information</h1>
                 <div className="form-item">
                     <label htmlFor="">First Name</label>
-                    <input type="text" />
+                    <input type="text" value={personalInfo.firstName} onChange={((e)=> onChange('firstName', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Last Name</label>
-                    <input type="text" />
+                    <input type="text" value={personalInfo.lastName} onChange={((e)=> onChange('lastName', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Email</label>
-                    <input type="text" />
+                    <input type="text" value={personalInfo.email} onChange={((e)=> onChange('email', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Phone Number</label>
-                    <input type="text" />
+                    <input type="text" value={personalInfo.phone} onChange={((e)=> onChange('phone', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">LinkedIn</label>
-                    <input type="text" />                    
+                    <input type="text" value={personalInfo.linkedin} onChange={((e)=> onChange('linkedin', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Github</label>
-                    <input type="text" />                    
+                    <input type="text" value={personalInfo.github} onChange={((e)=> onChange('github', e.target.value))}/>
                 </div>
 
                 <button className="next">Next</button>
