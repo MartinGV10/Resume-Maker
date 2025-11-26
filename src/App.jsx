@@ -2,7 +2,6 @@ import Nav from './Nav'
 import Footer from './Footer'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-
 import FormSetup from './FormSetup'
 import Home from './Home'
 
@@ -13,6 +12,7 @@ function App() {
 
         <Routes>
             <Route path='/' element={<Home/>}></Route>
+            <Route path='/form' element={<FormSetup/>}></Route>
         </Routes>
 
         <Footer/>

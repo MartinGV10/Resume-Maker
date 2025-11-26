@@ -14,7 +14,7 @@ function Home() {
         <div className="start">
             <h1>Re:sumé.io</h1>
             <p className="desc">Why waste time manually creating your resume, when this app completely does it for you!</p>
-            <Link to='/FormSetup'>
+            <Link to='/form'>
                 <button className="get-started">Click here to get started!</button>
             </Link>
         </div>
