@@ -1,7 +1,7 @@
 import './Page.css'
 
 function Page({ personalInfo }) {  
-    const {firstName, lastName, email, phone, linkedin, github} = personalInfo  
+    const {firstName, lastName, email, phone, linkedin, github, university, major, gradDate, schoolLoc, distinctions, courses} = personalInfo  
     return (
         <>
             <div className="page-cont">
@@ -9,28 +9,47 @@ function Page({ personalInfo }) {
                     <h1 className="p-name">
                         {firstName} {lastName}
                     </h1>
-                    <p className="p-everything">
+                    <div className="p-everything">
                         <p>{email}</p> | 
                         <p>{phone}</p> | 
                         <p>{linkedin}</p> | 
                         <p>{github}</p>
-                    </p>
+                    </div>
                 </div>
                 <div className="education">
-                    <h2 className="p-title">Education</h2>
+                    <h2 className="p-header">Education</h2>
                     <span className="divider"></span>
+                    <div className="p-section">
+                        <div className="p-left">
+                            <h2 className="p-title">{university}</h2>
+                            <p className='p-sub'><i>{major}</i></p>
+                            <ul className="p-desc">
+                                <li>{distinctions}</li>
+                                <li>James A. Edwards Scholarship Recipient</li>
+                                <li>Courses: {courses}</li>
+                            </ul>
+                        </div>
+                        
+                        <div className="p-right">
+                            <h2 className="p-date">Expected Grad: {gradDate}</h2>
+                            <p className='p-loc'><i>{schoolLoc}</i></p>
+                        </div>
+                    </div>
                 </div>
                 <div className="experience">
-                    <h2 className="p-title">Experience</h2>
+                    <h2 className="p-header">Experience</h2>
                     <span className="divider"></span>
+                    <div className="p-section"></div>
                 </div>
                 <div className="projects">
-                    <h2 className="p-title">Projects</h2>
+                    <h2 className="p-header">Projects</h2>
                     <span className="divider"></span>
+                    <div className="p-section"></div>
                 </div>
                 <div className="skills">
-                    <h2 className="p-title">Skills</h2>
+                    <h2 className="p-header">Skills</h2>
                     <span className="divider"></span>
+                    <div className="p-section"></div>
                 </div>
             </div>
         </>

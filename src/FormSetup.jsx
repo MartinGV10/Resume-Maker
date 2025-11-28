@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Page from './Page'
 import FormEdu from './FormEdu'
+import FormExp from './FormExp'
 
 function FormSetup() {
     const [personalInfo, setPersonalInfo] = useState({
@@ -16,9 +17,15 @@ function FormSetup() {
         university: '',
         major: '',
         gradDate: '',
-        location: '',
-        achievements: '',
+        schoolLoc: '',
+        distinctions: '',
         courses: '',
+        company: '',
+        title: '',
+        desc: '',
+        jobLoc: '',
+        startDate: '',
+        endDate: '',
     });
 
     const handlePersonalChange = (field, value) => {
@@ -65,7 +72,7 @@ function FormSetup() {
                 <div className="setup-left">
                     { step === 'personal' && <FormPersonal personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/> }
                     { step === 'education' && <FormEdu personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/>}
-                    { step === 'experience' && <FormPersonal personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/>}
+                    { step === 'experience' && <FormExp personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/>}
                     { step === 'projects' && <FormPersonal personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/>}
                     { step === 'skills' && <FormPersonal personalInfo={personalInfo} onChange={handlePersonalChange} nextStep={nextStep}/>}
                 </div>
