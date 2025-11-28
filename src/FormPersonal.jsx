@@ -1,4 +1,7 @@
-function FormPersonal({ personalInfo, onChange }) {
+import FormEdu from "./FormEdu"
+import { Link } from "react-router-dom"
+
+function FormPersonal({ personalInfo, onChange, nextStep }) {
     return (
         <>
             <div className="form-cont">
@@ -28,7 +31,10 @@ function FormPersonal({ personalInfo, onChange }) {
                     <input type="text" value={personalInfo.github} onChange={((e)=> onChange('github', e.target.value))}/>
                 </div>
 
-                <button className="next">Next</button>
+                {/* <Link to='/'> */}
+                    <button className="next" onClick={nextStep}>Next</button>
+
+                {/* </Link> */}
             </div> 
         </>
     )
