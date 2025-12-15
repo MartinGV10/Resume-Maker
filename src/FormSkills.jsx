@@ -28,7 +28,7 @@ function FormSkills({ personalInfo, onChange, nextStep }) {
     return (
         <>
             <div className="form-cont">
-                <h1>Education</h1>
+                <h1>Skills</h1>
                 {/* <div className="form-item"> */}
 
                 {data.map(m => (

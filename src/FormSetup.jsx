@@ -28,6 +28,7 @@ function FormSetup() {
         jobLoc: '',
         startDate: '',
         endDate: '',
+        curJob: false,
         projTit: '',
         tech: '',
         links: '',

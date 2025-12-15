@@ -34,7 +34,7 @@ function FormEdu({ personalInfo, onChange, nextStep }) {
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Graduation Date</label>
-                    <input type="month" value={personalInfo.gradDate} onChange={handleDate}/>
+                    <input type="month" value={personalInfo.gradDateRaw} onChange={handleDate}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Location</label>

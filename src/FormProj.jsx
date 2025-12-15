@@ -4,7 +4,7 @@ function FormProj({ personalInfo, onChange, nextStep }) {
     return (
         <>
             <div className="form-cont">
-                <h1>Education</h1>
+                <h1>Projects</h1>
                 <div className="form-item">
                     <label htmlFor="">Project Title</label>
                     <input type="text" value={personalInfo.projTit} onChange={((e)=> onChange('projTit', e.target.value))}/>

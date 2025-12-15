@@ -1,9 +1,10 @@
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
 function FormExp({ personalInfo, onChange, nextStep }) {
     const handleStart = (e) => {
         const raw = e.target.value; // "2025-05"
-        onChange("gradDateRaw", raw);
+        onChange("startDateRaw", raw);
 
         if (!raw) {
             onChange("startDate", "");
@@ -21,7 +22,7 @@ function FormExp({ personalInfo, onChange, nextStep }) {
 
     const handleEnd = (e) => {
         const raw = e.target.value; // "2025-05"
-        onChange("gradDateRaw", raw);
+        onChange("endDateRaw", raw);
 
         if (!raw) {
             onChange("endDate", "");
@@ -36,6 +37,12 @@ function FormExp({ personalInfo, onChange, nextStep }) {
 
         onChange("endDate", formatted); // "May 2025"
     };
+
+    let [still, setStill] = useState(false)
+
+    useEffect(() => {
+        setStill(personalInfo.curJob || false);
+    }, [personalInfo.curJob]);
 
     return (
         <>
@@ -59,15 +66,33 @@ function FormExp({ personalInfo, onChange, nextStep }) {
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Date Started</label>
-                    <input type="month" value={personalInfo.startDate} onChange={handleStart}/>
+                    <input type="month" value={personalInfo.startDateRaw} onChange={handleStart}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Date Ended</label>
-                    <input type="month" value={personalInfo.endDate} onChange={handleEnd}/>
+                    <input type="month" value={personalInfo.endDateRaw} onChange={handleEnd}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Current Role?</label>
-                    <input type="checkbox" value={personalInfo.linkedin} onChange={((e)=> onChange('linkedin', e.target.value))}/>
+                    <input type="checkbox" checked={still} onChange={(e) => {
+                        const isChecked = e.target.checked;
+                        setStill(isChecked);
+                        onChange('curJob', isChecked);
+                        if (isChecked) {
+                            onChange('endDate', 'Present');
+                        } else {
+                            if (personalInfo.endDateRaw) {
+                                const [year, month] = personalInfo.endDateRaw.split("-");
+                                const formatted = new Date(year, month - 1).toLocaleString("default", {
+                                    month: "long",
+                                    year: "numeric",
+                                });
+                                onChange('endDate', formatted);
+                            } else {
+                                onChange('endDate', '');
+                            }
+                        }
+                    }}/>
                 </div>
 
                 <div className="btns">
