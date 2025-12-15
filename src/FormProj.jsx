@@ -24,7 +24,8 @@ function FormProj({ personalInfo, onChange, nextStep }) {
 
 
                 <div className="btns">
-                    <button className="add">Add Description</button>
+                    {/* <button className="add">Add Project</button>
+                    <button className="add">Add Description</button> */}
                     <button className="next" onClick={nextStep}>Next</button>
                 </div>
             </div> 

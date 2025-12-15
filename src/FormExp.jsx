@@ -96,7 +96,8 @@ function FormExp({ personalInfo, onChange, nextStep }) {
                 </div>
 
                 <div className="btns">
-                    <button className="add">Add Description</button>
+                    {/* <button className="add">Add Experience</button>
+                    <button className="add">Add Description</button> */}
                     <button className="next" onClick={nextStep}>Next</button>
                 </div>
 

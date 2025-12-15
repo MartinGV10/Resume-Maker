@@ -3,7 +3,6 @@ import './Page.css'
 function Page({ personalInfo }) {  
     let {firstName, lastName, email, phone, linkedin, github, university, major, gradDate, schoolLoc, distinctions, courses, company, title, desc, jobLoc, startDate, endDate, projTit, tech, links, projDesc, langs, libs, devTools, curJob} = personalInfo  
 
-
     return (
         <>
             <div className="page-cont">
@@ -55,8 +54,6 @@ function Page({ personalInfo }) {
                         </div>
                         
                         <div className="p-right">
-                            {/* <li>{courses != '' ? `Courses: ${courses}` : ''}</li> */}
-                            {/* <h2 className="p-date">{startDate} - {endDate}</h2> */}
                             <h2 className="p-date">{startDate || endDate != '' ? `${startDate} - ${endDate}` : ''}</h2>
                             <p className='p-loc'><i>{jobLoc}</i></p>
                         </div>
@@ -69,7 +66,8 @@ function Page({ personalInfo }) {
                     <span className="divider"></span>
                     <div className="p-section">
                         <div className="p-left">
-                            <h2 className="p-title">{projTit} | {links}</h2>
+                            {/* <h2 className="p-title">{projTit} | {links}</h2> */}
+                            <h2 className="p-title">{projTit != '' ? `${projTit} | ${links}` : ''}</h2>
                             <ul className="p-desc">
                                 <li>{projDesc}</li>
                             </ul>

@@ -50,7 +50,7 @@ function FormEdu({ personalInfo, onChange, nextStep }) {
                 </div>
 
                 <div className="btns">
-                    <button className="add">Add University</button>
+                    {/* <button className="add">Add University</button> */}
                     <button className="next" onClick={nextStep}>Next</button>
                 </div>
             </div> 
