@@ -19,7 +19,7 @@ function FormEdu({ personalInfo, onChange, nextStep }) {
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Location</label>
-                    <input type="text" value={personalInfo.location} onChange={((e)=> onChange('schoolLoc', e.target.value))}/>
+                    <input type="text" value={personalInfo.schoolLoc} onChange={((e)=> onChange('schoolLoc', e.target.value))}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Distinctions</label>

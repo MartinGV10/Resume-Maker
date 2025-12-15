@@ -4,7 +4,8 @@
     min-width: 0;
     color: black;
     font-family: Calibri;
-    height: 600px;
+    height: 703px;
+    margin-top: 50px;
     margin-bottom: 20px;
     border-radius: 10px;
     padding: 15px;
@@ -80,4 +81,8 @@
     flex-direction: column;
     /* align-items: center; */
     margin-left: 30px;
+}
+
+.no {
+    font-weight: 500;
 }
