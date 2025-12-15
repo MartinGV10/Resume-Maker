@@ -1,6 +1,25 @@
 import { useState } from "react"
 
 function FormEdu({ personalInfo, onChange, nextStep }) {    
+
+    const handleDate = (e) => {
+        const raw = e.target.value; // "2025-05"
+        onChange("gradDateRaw", raw);
+
+        if (!raw) {
+            onChange("gradDate", "");
+            return;
+        }
+
+        const [year, month] = raw.split("-");
+        const formatted = new Date(year, month - 1).toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+        });
+
+        onChange("gradDate", formatted); // "May 2025"
+    };
+
     return (
         <>
             <div className="form-cont">
@@ -15,7 +34,7 @@ function FormEdu({ personalInfo, onChange, nextStep }) {
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Graduation Date</label>
-                    <input type="date" value={personalInfo.gradDate} onChange={((e)=> onChange('gradDate', e.target.value))}/>
+                    <input type="month" value={personalInfo.gradDate} onChange={handleDate}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Location</label>

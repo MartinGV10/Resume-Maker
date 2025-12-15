@@ -53,7 +53,7 @@ function Page({ personalInfo }) {
                         </div>
                         
                         <div className="p-right">
-                            <h2 className="p-date">{startDate} {endDate}</h2>
+                            <h2 className="p-date">{startDate} - {endDate}</h2>
                             <p className='p-loc'><i>{jobLoc}</i></p>
                         </div>
                     </div>

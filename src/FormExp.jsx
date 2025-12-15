@@ -1,6 +1,42 @@
 import { Link } from "react-router-dom"
 
 function FormExp({ personalInfo, onChange, nextStep }) {
+    const handleStart = (e) => {
+        const raw = e.target.value; // "2025-05"
+        onChange("gradDateRaw", raw);
+
+        if (!raw) {
+            onChange("startDate", "");
+            return;
+        }
+
+        const [year, month] = raw.split("-");
+        const formatted = new Date(year, month - 1).toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+        });
+
+        onChange("startDate", formatted); // "May 2025"
+    };
+
+    const handleEnd = (e) => {
+        const raw = e.target.value; // "2025-05"
+        onChange("gradDateRaw", raw);
+
+        if (!raw) {
+            onChange("endDate", "");
+            return;
+        }
+
+        const [year, month] = raw.split("-");
+        const formatted = new Date(year, month - 1).toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+        });
+
+        onChange("endDate", formatted); // "May 2025"
+    };
+
     return (
         <>
             <div className="form-cont">
@@ -23,11 +59,11 @@ function FormExp({ personalInfo, onChange, nextStep }) {
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Date Started</label>
-                    <input type="date" value={personalInfo.startDate} onChange={((e)=> onChange('startDate', e.target.value))}/>
+                    <input type="month" value={personalInfo.startDate} onChange={handleStart}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Date Ended</label>
-                    <input type="date" value={personalInfo.endDate} onChange={((e)=> onChange('endDate', e.target.value))}/>
+                    <input type="month" value={personalInfo.endDate} onChange={handleEnd}/>
                 </div>
                 <div className="form-item">
                     <label htmlFor="">Current Role?</label>
